@@ -1,7 +1,8 @@
-var mongoose = require('mongoose');
+import  mongoose from 'mongoose';
 
 
-var roomSchema = mongoose.Schema({
+
+const roomSchema = mongoose.Schema({
     tittle: {
         type: String,
         required: true
@@ -26,5 +27,5 @@ var roomSchema = mongoose.Schema({
         
 }, {timestamps: true});
 
-var Rooms = mongoose.model('Rooms', roomSchema, "rooms");
+const Rooms = mongoose.model('Rooms', roomSchema, "rooms");
 export default Rooms;
