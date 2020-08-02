@@ -1,12 +1,13 @@
 let express = require('express')
 
 let app = express();
-let apiRoutes = require("./api-routes")
+let apiRoutes = require("./router/room.router")
 
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 3000;
 
-let bodyParser = require('body-parser')
+let bodyParser = require('body-parser');
 let mongoose = require('mongoose');
+
 
 app.use(bodyParser.urlencoded({
    extended: true
@@ -14,10 +15,13 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-mongoose.connect("mongodb://localhost:27017/message-database",  {
-useUnifiedTopology: true,
-useNewUrlParser: true,
-});                                                                                                         ', { useNewUrlParser: true});
+const url = "mongodb+srv://phu1994:6298327@cluster0.rpsig.mongodb.net/message?retryWrites=true&w=majority"
+
+mongoose.connect(url,{
+   useCreateIndex: true,
+   useNewUrlParser: true,
+   useUnifiedTopology: true
+});
 var db = mongoose.connection;
 
 
