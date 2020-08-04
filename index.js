@@ -1,4 +1,4 @@
-let express = require('express')
+import express from 'express'
 
 let app = express();
 let apiRoutes = require("./router/room.router")
@@ -28,4 +28,4 @@ var db = mongoose.connection;
 app.get('/', (req, res) => res.send('Hello World with Express'));
 app.use('/api', apiRoutes)
 
-app.listen(port, () => console.log("Running with port:", port))
+app.listen(port, () => console.log("Hello Phu, Running with port:", port))
