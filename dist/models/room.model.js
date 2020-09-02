@@ -22,13 +22,13 @@ var roomSchema = _mongoose2.default.Schema({
     description: String,
 
     owner: {
-        type: Schema.ObjectId,
+        type: _mongoose2.default.Schema.ObjectId,
         ref: "Users",
         required: "Owner is required",
         index: true
     },
     member: [{
-        type: Schema.ObjectId,
+        type: _mongoose2.default.Schema.ObjectId,
         ref: "Users",
         index: true
     }]

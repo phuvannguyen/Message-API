@@ -1,3 +1,5 @@
+
+
 import  mongoose from 'mongoose';
 
 
@@ -18,18 +20,7 @@ const messageSchema = mongoose.Schema({
     // identify the stored content:
     // plain: standard text.
     // code: a programming snippet.
-    type: {
-        type: String,
-        enum: ["plain", "code", "fork"],
-        required: "Type is required"
-    },
-
-    specifics: {
-        language: { type: String, enum: ['plain', 'markdown', 'html', 'javascript', 'css']},
-        hightlight: {type: String},
-        //Use with "fork"
-        chat: {type: Schema.ObjectId, ref: "Chat"}
-    },
+    
     deletedAt: Date,
     
 

@@ -2,11 +2,11 @@ import  mongoose from 'mongoose';
 
 
 const chatSchema = mongoose.Schema({
-    room: {
-        type: Scheme.ObjectId,
-        ref: "Room",
-        required: "Room is required"
+    receiverId: {
+        type: Scheme.ObjectId
+        
     },
+    isGroup: Boolean,
     parent: {
         type: Schema.ObjectId,
         ref: "Chat",
@@ -14,19 +14,11 @@ const chatSchema = mongoose.Schema({
 
     title: String,
     description: String,
-
-    github: String,
+    
     firstMessageDate: Date,
-    lastMessageDate: Date,
-    sticky: {
-        type: Scheme.ObjectId,
-        ref: "Message"
-
-
-    },
-    closed: Boolean,
-    createdAt: Date,
-    modifiedAt: Date
+    lastMessageDate: Date,    
+    
+    
 
 },{timestamps: true});
 

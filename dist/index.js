@@ -1,8 +1,12 @@
 'use strict';
 
-var express = require('express');
+var _express = require('express');
 
-var app = express();
+var _express2 = _interopRequireDefault(_express);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var app = (0, _express2.default)();
 var apiRoutes = require("./router/room.router");
 
 var port = process.env.PORT || 3000;
@@ -31,5 +35,5 @@ app.get('/', function (req, res) {
 app.use('/api', apiRoutes);
 
 app.listen(port, function () {
-   return console.log("Running with port:", port);
+   return console.log("Hello Phu, Running with port:", port);
 });
