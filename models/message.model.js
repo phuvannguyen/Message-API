@@ -2,17 +2,15 @@
 
 import  mongoose from 'mongoose';
 
-
-
 const messageSchema = mongoose.Schema({
     chat: {
-        type: Schema.ObjectId,
+        type: mongoose.Types.ObjectId,
         ref: "Chat",
         required: 'Chat is required'
 
     },
     owner: {
-        type: Schema.ObjectId,
+        type: mongoose.Types.ObjectId,
         ref: "Users"
     },
     content: String,
@@ -27,5 +25,5 @@ const messageSchema = mongoose.Schema({
 }, {timestamps: true});
 
 messageSchema.index({createdAt: true})
-const Messages = mongoose.model('Messages', roomSchema, "messages");
+const Messages = mongoose.model('messages', messageSchema, "messages");
 export default Messages;
